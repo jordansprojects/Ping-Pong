@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "d9XHOoanAkaZ1IXWZcEXEvDjpXydnGrVwC3ozE7TKEUT8bfrHmoIaaPU6NWoQDlaREoEWUC6dRWM/UJeVmqfzg==",
+  "success": true,
+  "projectFilePath": "/home/jordan/Desktop/Godot Creations/PingPongFix/PingPongFix.csproj",
+  "expectedPackageFiles": [
+    "/home/jordan/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "/home/jordan/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

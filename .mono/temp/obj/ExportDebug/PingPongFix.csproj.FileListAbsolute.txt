@@ -1,0 +1,9 @@
+/home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/bin/ExportDebug/PingPongFix.dll
+/home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/bin/ExportDebug/PingPongFix.pdb
+/home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/ExportDebug/PingPongFix.csproj.AssemblyReference.cache
+/home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/ExportDebug/PingPongFix.GeneratedMSBuildEditorConfig.editorconfig
+/home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/ExportDebug/PingPongFix.AssemblyInfoInputs.cache
+/home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/ExportDebug/PingPongFix.AssemblyInfo.cs
+/home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/ExportDebug/PingPongFix.csproj.CoreCompileInputs.cache
+/home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/ExportDebug/PingPongFix.dll
+/home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/ExportDebug/PingPongFix.pdb
