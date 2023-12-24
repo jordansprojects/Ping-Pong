@@ -38,7 +38,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 154.12, 288.93 )
+extents = Vector2( 196.166, 293.911 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
@@ -147,7 +147,7 @@ position = Vector2( -8.2041, 6.10352e-05 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/Middle"]
-position = Vector2( -15.2362, -63.0995 )
+position = Vector2( -5.42059, -68.0811 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 29 )
 
@@ -156,7 +156,7 @@ position = Vector2( -8.2041, 6.10352e-05 )
 script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/Left"]
-position = Vector2( -329.336, -63.0996 )
+position = Vector2( -405.517, -51.476 )
 shape = SubResource( 29 )
 
 [node name="Right" type="Area2D" parent="Table"]
@@ -164,7 +164,7 @@ position = Vector2( -17.5803, 66.4206 )
 script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/Right"]
-position = Vector2( 295.348, -61.4391 )
+position = Vector2( 407.861, -129.52 )
 shape = SubResource( 29 )
 
 [node name="Pig B" parent="." instance=ExtResource( 4 )]
@@ -228,7 +228,7 @@ z_index = 4
 script = ExtResource( 7 )
 
 [node name="CaptainsChair" type="Sprite" parent="."]
-position = Vector2( 449, 381 )
+position = Vector2( 470, 421 )
 scale = Vector2( 6.02344, 4.03125 )
 z_index = 4
 script = ExtResource( 8 )
