@@ -12,12 +12,24 @@ public class PongActorB : CharacterController
 
 
     PongActorB() : base(1){
-        
+        strength  =40;
+        this.SetRow(Row.LEFT);
     }
 
     public override void PlayMyStyle()
     {
-        //throw new NotImplementedException();
+        if(this.GetRow() == Row.MIDDLE){
+			// he cannot hit in the middle.
+		}
+		else if(this.GetRow()== Row.LEFT){
+            direction = (Vector2.Up + Vector2.Right);
+
+		}
+		else if (this.GetRow()== Row.RIGHT){
+            direction = (Vector2.Up + Vector2.Left);
+
+		}
+        
     }
 
     // Called when the node enters the scene tree for the first time.

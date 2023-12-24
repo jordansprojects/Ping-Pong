@@ -7,12 +7,12 @@
 /home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/Debug/PingPongFix.csproj.CoreCompileInputs.cache
 /home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/Debug/PingPongFix.dll
 /home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/Debug/PingPongFix.pdb
-C:\Users\jords\Pig-Pong\.mono\temp\bin\Debug\PingPongFix.dll
-C:\Users\jords\Pig-Pong\.mono\temp\bin\Debug\PingPongFix.pdb
-C:\Users\jords\Pig-Pong\.mono\temp\obj\Debug\PingPongFix.csproj.AssemblyReference.cache
-C:\Users\jords\Pig-Pong\.mono\temp\obj\Debug\PingPongFix.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jords\Pig-Pong\.mono\temp\obj\Debug\PingPongFix.AssemblyInfoInputs.cache
-C:\Users\jords\Pig-Pong\.mono\temp\obj\Debug\PingPongFix.AssemblyInfo.cs
-C:\Users\jords\Pig-Pong\.mono\temp\obj\Debug\PingPongFix.csproj.CoreCompileInputs.cache
-C:\Users\jords\Pig-Pong\.mono\temp\obj\Debug\PingPongFix.dll
-C:\Users\jords\Pig-Pong\.mono\temp\obj\Debug\PingPongFix.pdb
+C:/Users/jords/Pig-Pong/.mono/temp/bin/Debug/PingPongFix.dll
+C:/Users/jords/Pig-Pong/.mono/temp/bin/Debug/PingPongFix.pdb
+C:/Users/jords/Pig-Pong/.mono/temp/obj/Debug/PingPongFix.csproj.AssemblyReference.cache
+C:/Users/jords/Pig-Pong/.mono/temp/obj/Debug/PingPongFix.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/jords/Pig-Pong/.mono/temp/obj/Debug/PingPongFix.AssemblyInfoInputs.cache
+C:/Users/jords/Pig-Pong/.mono/temp/obj/Debug/PingPongFix.AssemblyInfo.cs
+C:/Users/jords/Pig-Pong/.mono/temp/obj/Debug/PingPongFix.csproj.CoreCompileInputs.cache
+C:/Users/jords/Pig-Pong/.mono/temp/obj/Debug/PingPongFix.dll
+C:/Users/jords/Pig-Pong/.mono/temp/obj/Debug/PingPongFix.pdb

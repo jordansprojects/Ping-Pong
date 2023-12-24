@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Timers;
-public abstract class CharacterController : Area2D{
+public abstract class CharacterController : Node2D{
 	private int _index = 0;
 	private int _minIndex = 0;
 
@@ -17,6 +17,8 @@ public abstract class CharacterController : Area2D{
 	private AnimatedSprite _anim;
 	private AnimatedSprite _paddleAnim;
 
+	public Vector2 direction;
+	public int strength;
 
 	public enum Row: int{
 		MIDDLE =0 ,LEFT =1 ,RIGHT =2
@@ -64,6 +66,7 @@ public abstract class CharacterController : Area2D{
 			 //reset animation to beginning if needed.
 			if(_paddleAnim.Frame == 2){
 			_paddleAnim.Frame = 0; //
+			
 			}
 		 }
 

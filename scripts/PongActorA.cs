@@ -8,11 +8,10 @@ public class PongActorA : CharacterController
 	// private int a = 2;
 	// private string b = "text";
 
-	
-
-
 	PongActorA() : base(0){
-        
+        // shes gentle so she always hit straight and with not much force :-)
+		strength = 400;
+		direction = Vector2.Up;
     }
 
 	
