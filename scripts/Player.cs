@@ -7,14 +7,13 @@ public class Player : Node{
   
 	private int _select = 0; 
 	private List<CharacterController> _controllers; 
-	private List<Chair> _chairs; 
-	private Cursor _cursor;
+	private List<Chair> _chairs;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready(){
-
-		_cursor = GetNode<Area2D>("Cursor") as Cursor;
+		
 		PopulateControllerList();
 		PopulateChairList();
+		PickCharacter(_select);
 
 		// start with first character
 		for(int i = 0; i < 3; i++) ShiftRight();
@@ -102,5 +101,14 @@ for(int i = 0; i < _controllers.Count; i++){
 				PickCharacter(i);
 			}
 		}
+  }
+
+
+  public CharacterController GetActivePlayer(){
+	return _controllers[_select];
+  }
+
+  public int GetActiveIndex(){
+	return _select;
   }
 } // end of class

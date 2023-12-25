@@ -10,19 +10,11 @@ public class RightRow : TableRow
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready(){
 		base._Ready();
-		
-	}
-private void _OnAreaEntered(Area2D obj)
-	{
-		
-		if (obj is Cursor){
-			GD.Print(this.GetType().Name + ".cs: cursor entered.");
-		}
-		
-		
+		banned = 2;
+		row = CharacterController.Row.RIGHT;
+
 	}
 	
-
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)
 //  {

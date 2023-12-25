@@ -12,7 +12,7 @@ public class PongActorB : CharacterController
 
 
     PongActorB() : base(1){
-        strength  =40;
+        strength  =430;
         this.SetRow(Row.LEFT);
     }
 

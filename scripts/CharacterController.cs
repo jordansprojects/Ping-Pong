@@ -15,10 +15,11 @@ public abstract class CharacterController : Node2D{
 	const int COUNT = 3;
 	private bool _selected = false;
 	private AnimatedSprite _anim;
-	private AnimatedSprite _paddleAnim;
+	//private AnimatedSprite _paddleAnim;
 
 	public Vector2 direction;
 	public int strength;
+
 
 	public enum Row: int{
 		MIDDLE =0 ,LEFT =1 ,RIGHT =2
@@ -40,11 +41,11 @@ public abstract class CharacterController : Node2D{
 		Scale = new Vector2(DEFAULT_SCALE, DEFAULT_SCALE);
 		GD.Print(this.GetType().Name + ".cs: Ready called.");
 		_anim = GetNode<AnimatedSprite>("AnimatedSprite") as AnimatedSprite;
-		_paddleAnim = GetNode<Node2D>("Paddle").GetChild<AnimatedSprite>(1);
+		//_paddleAnim = GetNode<Node2D>("Paddle").GetChild<AnimatedSprite>(1);
 
-		if(_paddleAnim == null){
+		/*if(_paddleAnim == null){
 			GD.Print(this.GetType().Name + ".cs: Error: AnimatedSprite Paddle node not found.");
-		}
+		}*/
 		
 		if (_anim == null){
         GD.Print(this.GetType().Name + ".cs: Error: AnimatedSprite node not found.");
@@ -60,7 +61,7 @@ public abstract class CharacterController : Node2D{
 		 Scale = ( (mousPos.x < Position.x ) && Scale.x > 0) ? new Vector2(Scale.x*-1, Scale.y) :Scale; 
 		 Scale = ( (mousPos.x > Position.x ) && Scale.x < 0) ? new Vector2(Scale.x*-1, Scale.y) :Scale; 
 
-		 if (Input.IsActionPressed("ui_select")){
+		/*  if (Input.IsActionPressed("ui_select")){
 			_paddleAnim.Play("default");
 
 			 //reset animation to beginning if needed.
@@ -68,7 +69,7 @@ public abstract class CharacterController : Node2D{
 			_paddleAnim.Frame = 0; //
 			
 			}
-		 }
+		 }*/
 
 		 PlayMyStyle(); 
 	}
@@ -90,16 +91,16 @@ public abstract class CharacterController : Node2D{
 		GD.Print(this.GetType().Name + ".cs: I am active.");
 		_selected = true;
 		_anim.Frame = GO_FRAME;
-		_paddleAnim.Play("default");
-		_paddleAnim.Stop();
+	//	_paddleAnim.Play("default");
+	//	_paddleAnim.Stop();
 	}
 
 	public void Unselect(){
 		_selected = false;
 		_anim.Frame = REST_FRAME;
 
-		_paddleAnim.Play("nothingness");
-		_paddleAnim.Stop();
+	//	_paddleAnim.Play("nothingness");
+	//	_paddleAnim.Stop();
 		
 	}
 

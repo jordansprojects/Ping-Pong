@@ -9,44 +9,72 @@ public class Paddle : Area2D
 
     // Called when the node enters the scene tree for the first time.
     
-    private CharacterController actor; 
+    private CharacterController _actor; 
+    public static bool isBallHittable = false;
+    private const float HIT_TIME = 1.0f;
+    private string [] animations = new string[] {"PigA", "PigB", "PigC"};
+    private AnimatedSprite _anim;
+    private Player _player;
+    private Timer timer;
+
+    public bool blocked = false;
+
+  
     public override void _Ready(){
-        actor = GetParent() as CharacterController;
+
+        timer = GetNode<Timer>("../Timer");
+        _player= GetParent() as Player;
+        _anim = GetNode<AnimatedSprite>("AnimatedSprite");
+
          Connect("body_entered", this, "_OnBodyEntered");
-
-        
+         //Connect("")
     }
-
     private void _OnBodyEntered(Node body){
-        int appliedStrength = actor.strength;
-        var direction = actor.direction;
+        GD.Print(this.GetType().Name + ".cs Ball detected.");
+        isBallHittable = true;
+        timer.Start(HIT_TIME);
+        int appliedStrength = _actor.strength;
+        var direction = _actor.direction;
         if (body is KinematicBody2D ball){
-
              if (Input.IsActionPressed("ui_select") || Input.IsActionJustReleased("ui_select")){
                 GD.Print(this.GetType().Name + ".cs Ball hit!");
-             }else{
+             }else if(!isBallHittable){
+                GD.Print(this.GetType().Name +".cs Failed to hit ball.");
                 direction = Vector2.Down; // ball falls down if you fail to click
                 appliedStrength = 50;
              }
             
-            GD.Print(this.GetType().Name + ".cs: Hitting ball with " + appliedStrength + "force in the direction of " 
-            +direction);
 
-            Ball data = (Ball) ball;
-            var motion = (data.velocity + (appliedStrength*direction) );
-            ball.MoveAndCollide(motion);
-
+        Ball data = (Ball) ball;
+        var motion = (data.velocity + (appliedStrength*direction) );
+        ball.MoveAndCollide(motion);
             
-            
-
-
 
         }
+
+
+
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+  public override void _Process(float delta) {
+     GlobalPosition =    GetViewport().GetMousePosition();
+     _actor = _player.GetActivePlayer();
+     string animation = animations[_player.GetActiveIndex()];
+
+     Vector2 mousPos = GetViewport().GetMousePosition();
+		 Scale = ( (_actor.GlobalPosition.x < GlobalPosition.x ) && Scale.x < 0) ? new Vector2(Scale.x*-1, Scale.y) :Scale; 
+		 Scale = ( (_actor.GlobalPosition.x > GlobalPosition.x ) && Scale.x > 0) ? new Vector2(Scale.x*-1, Scale.y) :Scale; 
+    _anim.Play(animation);
+
+    this.Visible = !blocked;
+    this.SetProcessInput(!blocked);
+  }
+
+  public void SetPlayersRow(CharacterController.Row row){
+    _actor.SetRow(row);
+  }
+  public int GetActiveIndex(){
+    return _player.GetActiveIndex();
+  }
 }

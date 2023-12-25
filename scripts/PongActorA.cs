@@ -10,7 +10,7 @@ public class PongActorA : CharacterController
 
 	PongActorA() : base(0){
         // shes gentle so she always hit straight and with not much force :-)
-		strength = 400;
+		strength = 430;
 		direction = Vector2.Up;
     }
 

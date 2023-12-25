@@ -5,9 +5,11 @@ public class Ball : KinematicBody2D
 {
     private float gravity = 26f;
     public Vector2 velocity = new Vector2(0,0);
-    private float minScale = 0.2f; // Minimum scale when Y is at its maximum
-    private float maxScale = .7f; // Maximum scale when Y is at its minimum
-    private float speedFactor = 0.002f; // Adjust this to control the scaling speed
+    private float minScale = 0.05f; // Minimum scale when Y is at its maximum
+    private float maxScale = .5f; // Maximum scale when Y is at its minimum
+    private float speedFactor = 0.001f; // Adjust this to control the scaling speed
+
+    float targetX;
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
@@ -43,6 +45,10 @@ public void SimulateServe(){
 
         // Update the scale of the ball
         Scale = new Vector2(newScale, newScale);
+
+         // Move towards the target X-coordinate
+      //  Vector2 targetPosition = new Vector2(targetX, Position.y);
+       // Position = Position.LinearInterpolate(targetPosition, delta);
 
        
   }

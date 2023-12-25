@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public class MiddleRow : TableRow
 {
@@ -11,18 +12,19 @@ public class MiddleRow : TableRow
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready(){
 		base._Ready();
+		// add banned pig indicies
+		banned = 1;
+		row = CharacterController.Row.MIDDLE;
+
 		
 	}
 
-	private void _OnAreaEntered(Area2D obj)
-	{
-		
-		if (obj is Cursor){
-			GD.Print(this.GetType().Name + ".cs: cursor entered.");
-		}
+
 		
 		
-	}
+	
+	
+	
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)
