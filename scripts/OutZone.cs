@@ -11,18 +11,20 @@ public class OutZone : Area2D
     public override void _Ready()
     {
         Connect("body_entered", this, "_OnBodyEntered");
+        
     }
 
-     private void _OnBodyEntered(Node body){
+    private void _OnBodyEntered(Node body){
+        if(body is KinematicBody2D kine){
+            if(kine is Ball ball){
+                GD.Print(this.GetType().Name + ".cs : Ball entered outzone.");
+                ball.Destroy();
 
-        if (body is KinematicBody2D ball){
+            }
 
+        }else if(body is RigidBody2D ){
             
-            // bounce back into the zone
-            
-
         }
-
 
 
     }

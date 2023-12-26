@@ -22,6 +22,7 @@ public class Ball : KinematicBody2D
 
 public void Destroy(){
     GD.Print(this.GetType().Name + ".cs : I am dying now :)");
+    Wolf.isBallLive = false;
     QueueFree();
   
 }

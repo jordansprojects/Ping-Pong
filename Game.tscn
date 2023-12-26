@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://scripts/Chair.cs" type="Script" id=1]
 [ext_resource path="res://scripts/CaptainsChair.cs" type="Script" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://scripts/Player.cs" type="Script" id=17]
 [ext_resource path="res://scripts/Paddle.cs" type="Script" id=18]
 [ext_resource path="res://scripts/Wolf.cs" type="Script" id=19]
+[ext_resource path="res://scripts/BounceZoneR.cs" type="Script" id=20]
+[ext_resource path="res://scripts/BounceZoneL.cs" type="Script" id=21]
 
 [sub_resource type="CircleShape2D" id=67]
 radius = 32.9848
@@ -216,7 +218,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=69]
-extents = Vector2( 124, 173.531 )
+extents = Vector2( 153.898, 174.297 )
 
 [sub_resource type="RectangleShape2D" id=80]
 extents = Vector2( 352, 48 )
@@ -272,7 +274,7 @@ frames = SubResource( 74 )
 position = Vector2( 192, 51.9995 )
 
 [node name="SpawnPoint2" type="Node2D" parent="Wolf"]
-position = Vector2( -224, 52.0006 )
+position = Vector2( -75.9999, 68.0002 )
 
 [node name="SpawnPoint3" type="Node2D" parent="Wolf"]
 position = Vector2( 0.00012207, 36 )
@@ -359,10 +361,10 @@ position = Vector2( 0, -32 )
 shape = SubResource( 69 )
 
 [node name="Border1" type="Node2D" parent="Table/Middle"]
-position = Vector2( -199.796, 212 )
+position = Vector2( -160, 128 )
 
 [node name="Border2" type="Node2D" parent="Table/Middle"]
-position = Vector2( 184.204, 212 )
+position = Vector2( 160, -48 )
 
 [node name="Left" type="Area2D" parent="Table"]
 position = Vector2( 1.90735e-06, -12 )
@@ -372,14 +374,14 @@ input_pickable = false
 script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/Left"]
-position = Vector2( -359.796, 63.0624 )
+position = Vector2( -329.898, 62.2967 )
 shape = SubResource( 69 )
 
 [node name="Border1" type="Node2D" parent="Table/Left"]
-position = Vector2( -583.796, 212 )
+position = Vector2( -496, 224 )
 
 [node name="Border2" type="Node2D" parent="Table/Left"]
-position = Vector2( -199.796, 212 )
+position = Vector2( -176, 0 )
 
 [node name="Right" type="Area2D" parent="Table"]
 position = Vector2( 0, 132 )
@@ -393,10 +395,10 @@ position = Vector2( 288, -80 )
 shape = SubResource( 69 )
 
 [node name="Border1" type="Node2D" parent="Table/Right"]
-position = Vector2( 209.58, 145.579 )
+position = Vector2( 144, 96 )
 
 [node name="Border2" type="Node2D" parent="Table/Right"]
-position = Vector2( 593.58, 145.579 )
+position = Vector2( 432, -112 )
 
 [node name="Net" type="Area2D" parent="Table"]
 
@@ -404,7 +406,7 @@ position = Vector2( 593.58, 145.579 )
 position = Vector2( -16, -172 )
 shape = SubResource( 80 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 position = Vector2( 535, 297 )
 scale = Vector2( 0.55, 0.55 )
 z_index = -8
@@ -414,17 +416,29 @@ texture = ExtResource( 8 )
 stream = ExtResource( 14 )
 autoplay = true
 
-[node name="OutZoneRight" type="Area2D" parent="."]
+[node name="BounceZones" type="Node2D" parent="."]
+
+[node name="BounceZoneL" type="Area2D" parent="BounceZones"]
+script = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="BounceZones/BounceZoneL"]
+polygon = PoolVector2Array( 384, 224, 368, 256, 312, 248, 288, 272, 304, 344, 280, 392, 240, 472, 288, 480, 360, 296, 304, 304, 304, 264, 400, 264, 424, 232 )
+
+[node name="BounceZoneR" type="Area2D" parent="BounceZones"]
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="BounceZones/BounceZoneR"]
+polygon = PoolVector2Array( 640, 256, 600, 256, 592, 248, 576, 248, 576, 264, 640, 264, 640, 296, 600, 296, 672, 464, 720, 464, 656, 336, 648, 320, 646.387, 307.1 )
+
+[node name="OutZone" type="Area2D" parent="."]
+visible = false
 script = ExtResource( 11 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutZoneRight"]
-polygon = PoolVector2Array( 712, 244, 580, 229, 745, 481, 860, 466 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutZone"]
+polygon = PoolVector2Array( 584, 224, 672, 232, 664, 168, 744, 176, 928, 344, 992, 496, 864, 520, 840, 488, 848, 424, 832, 360, 736, 352, 688, 368 )
 
-[node name="OutZoneLeft" type="Area2D" parent="."]
-script = ExtResource( 11 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="OutZoneLeft"]
-polygon = PoolVector2Array( 361, 217, 288, 219, 115, 460, 210, 475, 336, 302, 301, 288, 317, 259, 364, 261, 381, 227 )
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="OutZone"]
+polygon = PoolVector2Array( 376, 224, 384, 168, 312, 152, 16, 408, 8, 528, 120, 528, 144, 496, 136, 440, 136, 416, 120, 368, 104, 344, 144, 344, 184, 368, 200, 384, 208, 336, 232, 376, 264, 360, 288, 344, 280, 280, 304, 240, 360, 248 )
 
 [connection signal="timeout" from="Timer" to="Timer" method="_OnTimerTimeOut"]
 [connection signal="timeout" from="BallTimer" to="Wolf" method="_OnBallTimerTimeOut"]

@@ -20,6 +20,8 @@ public abstract class CharacterController : Node2D{
 	public Vector2 direction;
 	public int strength;
 
+	public float INTERPOLATE_FACTOR =0.7f;
+
 
 	public enum Row: int{
 		MIDDLE =0 ,LEFT =1 ,RIGHT =2

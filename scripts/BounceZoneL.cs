@@ -1,0 +1,40 @@
+using Godot;
+using System;
+
+public class BounceZoneL: Area2D
+{
+    // Declare member variables here. Examples:
+    // private int a = 2;
+    // private string b = "text";
+
+    public const float FORCE = 50;
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+    {
+        Connect("body_entered", this, "_OnBodyEntered");
+    }
+
+    private void _OnBodyEntered(Node body){
+        float appliedStrength = FORCE ;
+
+        Vector2 direction = Vector2.Right + Vector2.Down; //this may be adjusted to be random between Up and Down
+        GD.Print(this.GetType().Name + ".cs Ball detected.");
+        if (body is KinematicBody2D ball){
+                GD.Print(this.GetType().Name + ".cs Ball bounced");
+                  Ball data = (Ball) ball;
+                var motion = ( appliedStrength*direction );
+                ball.MoveAndCollide(motion);
+
+        }
+            
+        else if (body is RigidBody2D){ // if we decide to add suport for other body type instead.
+          
+        }
+    }
+
+//  // Called every frame. 'delta' is the elapsed time since the previous frame.
+//  public override void _Process(float delta)
+//  {
+//      
+//  }
+}

@@ -46,7 +46,7 @@ public class Paddle : Area2D
             
 
         Ball data = (Ball) ball;
-        var motion = (data.velocity + (appliedStrength*direction) );
+        var motion = ( (appliedStrength*direction) );
         ball.MoveAndCollide(motion);
             
         }else if (body is RigidBody2D){
@@ -59,7 +59,7 @@ public class Paddle : Area2D
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
   public override void _Process(float delta) {
-     GlobalPosition =    GetViewport().GetMousePosition();
+     var mouseCoords =    GetViewport().GetMousePosition();
      _actor = _player.GetActivePlayer();
      string animation = animations[_player.GetActiveIndex()];
 
@@ -68,8 +68,12 @@ public class Paddle : Area2D
 		 Scale = ( (_actor.GlobalPosition.x > GlobalPosition.x ) && Scale.x > 0) ? new Vector2(Scale.x*-1, Scale.y) :Scale; 
     _anim.Play(animation);
 
-    this.Visible = !blocked;
-    this.SetProcessInput(!blocked);
+    if(blocked){//TODO
+      // clamp based on what region the user is in
+
+    }
+    GlobalPosition = mouseCoords;
+
   }
 
   public void SetPlayersRow(CharacterController.Row row){

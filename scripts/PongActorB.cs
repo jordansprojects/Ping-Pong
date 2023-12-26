@@ -12,7 +12,7 @@ public class PongActorB : CharacterController
 
 
     PongActorB() : base(1){
-        strength  =300;
+        strength  =150;
         this.SetRow(Row.LEFT);
     }
 
@@ -23,11 +23,15 @@ public class PongActorB : CharacterController
             direction = new Vector2(0,0);
 		}
 		else if(this.GetRow()== Row.LEFT){
-            direction = (Vector2.Up + Vector2.Right);
+            var v = Vector2.Up  + Vector2.Right;
+            var interpolated = v.LinearInterpolate(Vector2.Up, INTERPOLATE_FACTOR).Normalized();
+            direction = interpolated;
 
 		}
 		else if (this.GetRow()== Row.RIGHT){
-            direction = (Vector2.Up + Vector2.Left);
+            var v = Vector2.Up  + Vector2.Left;
+            var interpolated = v.LinearInterpolate(Vector2.Up, INTERPOLATE_FACTOR).Normalized();
+            direction = interpolated;
 
 		}
         
