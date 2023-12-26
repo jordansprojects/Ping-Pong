@@ -11,7 +11,8 @@ public class PongActorC : CharacterController
 
 
     PongActorC() : base(2){
-        
+        strength = 400;
+        direction = Vector2.Up; //this will be adjusted to be random
     }
 
     public override void PlayMyStyle()

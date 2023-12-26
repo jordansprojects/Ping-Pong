@@ -12,7 +12,7 @@ public class PongActorB : CharacterController
 
 
     PongActorB() : base(1){
-        strength  =430;
+        strength  =400;
         this.SetRow(Row.LEFT);
     }
 
@@ -20,6 +20,7 @@ public class PongActorB : CharacterController
     {
         if(this.GetRow() == Row.MIDDLE){
 			// he cannot hit in the middle.
+            direction = new Vector2(0,0);
 		}
 		else if(this.GetRow()== Row.LEFT){
             direction = (Vector2.Up + Vector2.Right);
