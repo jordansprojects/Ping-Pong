@@ -49,7 +49,8 @@ public class Paddle : Area2D
         var motion = (data.velocity + (appliedStrength*direction) );
         ball.MoveAndCollide(motion);
             
-
+        }else if (body is RigidBody2D){
+          
         }
 
 

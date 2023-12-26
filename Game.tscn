@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scripts/Chair.cs" type="Script" id=1]
 [ext_resource path="res://scripts/CaptainsChair.cs" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://images/Background.png" type="Texture" id=8]
 [ext_resource path="res://scripts/RightRow.cs" type="Script" id=9]
 [ext_resource path="res://scripts/LeftRow.cs" type="Script" id=10]
+[ext_resource path="res://scripts/OutZone.cs" type="Script" id=11]
 [ext_resource path="res://images/Table.png" type="Texture" id=12]
 [ext_resource path="res://scripts/MiddleRow.cs" type="Script" id=13]
 [ext_resource path="res://music/Friendly_Competition_-_MiniJam_Connections.wav" type="AudioStream" id=14]
@@ -257,7 +258,7 @@ autostart = true
 script = SubResource( 82 )
 
 [node name="Wolf" type="Node2D" parent="."]
-position = Vector2( 480, 182 )
+position = Vector2( 514, 174 )
 rotation = 3.14159
 scale = Vector2( 0.5, -0.5 )
 script = ExtResource( 19 )
@@ -404,7 +405,7 @@ position = Vector2( -16, -172 )
 shape = SubResource( 80 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 536, 304 )
+position = Vector2( 535, 297 )
 scale = Vector2( 0.55, 0.55 )
 z_index = -8
 texture = ExtResource( 8 )
@@ -412,6 +413,18 @@ texture = ExtResource( 8 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
 autoplay = true
+
+[node name="OutZoneRight" type="Area2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OutZoneRight"]
+polygon = PoolVector2Array( 712, 244, 580, 229, 745, 481, 860, 466 )
+
+[node name="OutZoneLeft" type="Area2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="OutZoneLeft"]
+polygon = PoolVector2Array( 361, 217, 288, 219, 115, 460, 210, 475, 336, 302, 301, 288, 317, 259, 364, 261, 381, 227 )
 
 [connection signal="timeout" from="Timer" to="Timer" method="_OnTimerTimeOut"]
 [connection signal="timeout" from="BallTimer" to="Wolf" method="_OnBallTimerTimeOut"]

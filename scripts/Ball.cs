@@ -8,6 +8,7 @@ public class Ball : KinematicBody2D
     private float minScale = 0.05f; // Minimum scale when Y is at its maximum
     private float maxScale = .5f; // Maximum scale when Y is at its minimum
     private float speedFactor = 0.001f; // Adjust this to control the scaling speed
+    public const float DEATH_Y = 500f;
 
     float targetX;
     // Declare member variables here. Examples:
@@ -19,7 +20,11 @@ public class Ball : KinematicBody2D
       SimulateServe();
     }
 
-
+public void Destroy(){
+    GD.Print(this.GetType().Name + ".cs : I am dying now :)");
+    QueueFree();
+  
+}
 public void SimulateServe(){
   velocity += new Vector2(0,200f);
   MoveAndSlide(velocity);
@@ -49,6 +54,12 @@ public void SimulateServe(){
          // Move towards the target X-coordinate
       //  Vector2 targetPosition = new Vector2(targetX, Position.y);
        // Position = Position.LinearInterpolate(targetPosition, delta);
+
+       if (GlobalPosition.y > DEATH_Y){
+        this.Destroy();
+       }
+
+
 
        
   }
