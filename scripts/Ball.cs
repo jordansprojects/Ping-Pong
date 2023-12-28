@@ -10,6 +10,8 @@ public class Ball : KinematicBody2D
     private float speedFactor = 0.001f; // Adjust this to control the scaling speed
     public const float DEATH_Y = 500f;
 
+    public AudioStreamPlayer2D asp;
+
     float targetX;
     // Declare member variables here. Examples:
     // private int a = 2;
@@ -18,6 +20,7 @@ public class Ball : KinematicBody2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready(){
       SimulateServe();
+      asp = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
     }
 
 public void Destroy(){

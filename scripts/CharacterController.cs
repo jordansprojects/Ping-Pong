@@ -22,7 +22,9 @@ public abstract class CharacterController : Node2D{
 
 	public float INTERPOLATE_FACTOR =0.7f;
 
+	public List<Vector2> hitPoints; //ideal points for the pig to strike the ping pong! 
 
+	public Rect2 regionRect;
 	public enum Row: int{
 		MIDDLE =0 ,LEFT =1 ,RIGHT =2
 	}
@@ -37,9 +39,12 @@ public abstract class CharacterController : Node2D{
 	public CharacterController(){}
 	public CharacterController(int inputIndex){
 		_minIndex = _index = inputIndex;
+		strength = 150;
 	}
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready(){	
+		hitPoints = new List<Vector2>();
+		PopulateHitPoints();
 		Scale = new Vector2(DEFAULT_SCALE, DEFAULT_SCALE);
 		GD.Print(this.GetType().Name + ".cs: Ready called.");
 		_anim = GetNode<AnimatedSprite>("AnimatedSprite") as AnimatedSprite;
@@ -50,9 +55,9 @@ public abstract class CharacterController : Node2D{
 		}*/
 		
 		if (_anim == null){
-        GD.Print(this.GetType().Name + ".cs: Error: AnimatedSprite node not found.");
-        // Handle the error, throw an exception, or take appropriate action.
-    }
+		GD.Print(this.GetType().Name + ".cs: Error: AnimatedSprite node not found.");
+		// Handle the error, throw an exception, or take appropriate action.
+	}
 	}
 	
 
@@ -89,6 +94,15 @@ public abstract class CharacterController : Node2D{
 		}     
    }
 
+   public void PopulateHitPoints(){
+	// TopL should be read in first, so it will be indexed at 0.
+	// Then TopR and MidPoint. Important to remember when determining
+	// which points the pig will strike at
+	var points = GetNode<Node2D>("../HitPoints");
+	foreach (Node2D point in points.GetChildren()){
+		hitPoints.Add(point.Position);
+	}
+   }
 	public void Select(){
 		GD.Print(this.GetType().Name + ".cs: I am active.");
 		_selected = true;
