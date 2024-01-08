@@ -10,8 +10,9 @@ config_version=4
 
 [application]
 
-config/name="PigPong"
-run/main_scene="res://Game.tscn"
+config/name="PingPong"
+run/main_scene="res://scenes/pingpong.tscn"
+boot_splash/show_image=false
 config/icon="res://icon.png"
 
 [gui]

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jords\\Desktop\\Pig-Pong\\PingPongFix.csproj": {}
+    "/home/jordan/Desktop/Godot Creations/PingPongFix/PingPongFix.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jords\\Desktop\\Pig-Pong\\PingPongFix.csproj": {
+    "/home/jordan/Desktop/Godot Creations/PingPongFix/PingPongFix.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jords\\Desktop\\Pig-Pong\\PingPongFix.csproj",
+        "projectUniqueName": "/home/jordan/Desktop/Godot Creations/PingPongFix/PingPongFix.csproj",
         "projectName": "PingPongFix",
-        "projectPath": "C:\\Users\\jords\\Desktop\\Pig-Pong\\PingPongFix.csproj",
-        "packagesPath": "C:\\Users\\jords\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jords\\Desktop\\Pig-Pong\\.mono\\temp\\obj\\",
+        "projectPath": "/home/jordan/Desktop/Godot Creations/PingPongFix/PingPongFix.csproj",
+        "packagesPath": "/home/jordan/.nuget/packages/",
+        "outputPath": "/home/jordan/Desktop/Godot Creations/PingPongFix/.mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jords\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/jordan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net472"
@@ -37,7 +37,15 @@
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.311\\RuntimeIdentifierGraph.json"
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.114/RuntimeIdentifierGraph.json"
         }
       }
     }
